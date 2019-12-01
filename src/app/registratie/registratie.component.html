@@ -1,0 +1,33 @@
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title><b>Registreren</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="registreerForm" (ngSubmit)="onSubmit()">
+            <p class="error">{{error}}</p>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" type="email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Gebruikersnaam" formControlName="gebruikersnaam" type="text" >
+                </mat-form-field>
+            </p>            
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Wachtwoord" formControlName="wachtwoord" type="password">
+                </mat-form-field>
+            </p>  
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Wachtwoord bevestigen" formControlName="bevestigWachtwoord" type="password">
+                </mat-form-field>
+            </p>   
+            <button mat-raised-button color="primary" type="submit"
+            [disabled]="!registreerForm.valid || submitted">Registreren</button>
+            <button mat-raised-button color="secondary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Annuleren</button>             
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,18 @@
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title><b>Vrienden uitnodigen</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #verzoekForm="ngForm" (ngSubmit)="onSubmit()">
+            <h5>Geef de email van je vriend in en wij kijken of hij al een account heeft.</h5>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Email" [(ngModel)]="email" type="email" name="email" required>
+                </mat-form-field>
+            </p>    
+            <p class="error">{{error}}</p>       
+            <button mat-raised-button color="primary" type="submit"
+            [disabled]="!verzoekForm.form.valid || submitted">Uitnodigen</button>    
+        </form>
+    </mat-card-content>
+  </mat-card>

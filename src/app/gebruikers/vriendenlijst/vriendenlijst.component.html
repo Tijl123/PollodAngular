@@ -1,0 +1,14 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title><b>Vrienden</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>            
+            <ul>
+                    <li *ngFor="let v of vrienden">
+                        {{v.gebruikersnaam}} ({{v.email}})   
+                        <button mat-button class="verwijder" (click)="verwijderVriend(v.gebruikerID)">Verwijderen</button>
+                    </li>
+            </ul>
+            <p>{{messageVriend}}</p>           
+    </mat-card-content>
+</mat-card>

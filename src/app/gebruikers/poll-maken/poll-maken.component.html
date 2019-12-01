@@ -1,0 +1,33 @@
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title><b>Maak je poll</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #pollForm="ngForm" (ngSubmit)="onSubmit()">
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Vraag" [(ngModel)]="poll.vraag" name="vraag" type="text" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Antwoord 1" [(ngModel)]="responsEen" name="antwoordEen" type="text" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Antwoord 2" [(ngModel)]="responsTwee" name="antwoordTwee" type="text" required>
+                </mat-form-field>
+            </p>  
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Antwoord 3" [(ngModel)]="responsDrie" name="antwoordDrie" type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Antwoord 4" [(ngModel)]="responsVier" name="antwoordVier" type="text">
+                </mat-form-field>
+            </p>   
+            <p><b>Vul minstens twee antwoorden in!</b></p> 
+            <button mat-raised-button color="primary" type="submit"
+            [disabled]="!pollForm.form.valid || submitted">Maak poll</button>         
+        </form>
+    </mat-card-content>
+</mat-card>

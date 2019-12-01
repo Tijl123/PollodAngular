@@ -1,0 +1,21 @@
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title><b>Login</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+            <mat-form-field>
+              <input matInput placeholder="Gebruikersnaam" [(ngModel)]="gebruikerLogin.gebruikersnaam" type="text" name="gebruikersnaam" required>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Wachtwoord" [(ngModel)]="gebruikerLogin.wachtwoord" type="password" name="wachtwoord" required>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" type="submit"
+        [disabled]="!loginForm.form.valid || submitted">Login</button>
+      </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title><b>Vrienden uitnodigen</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content> 
+        <section class="section">
+            <mat-checkbox class="checkbox" *ngFor="let v of vrienden" (change)="onChange(v.gebruikerID, $event.checked)">{{v.gebruikersnaam}}</mat-checkbox>
+        </section>        
+        <p>{{messageVriend}}</p>
+        <p><b>Uitnodigingen worden live verstuurd. Indien je de uitnodigingen wilt annuleren, moet je ze terug unchecken.</b></p>
+        <button mat-raised-button color="primary" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Bevestigen</button>
+    </mat-card-content>
+</mat-card>

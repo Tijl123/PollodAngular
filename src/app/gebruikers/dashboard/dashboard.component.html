@@ -1,0 +1,35 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title><b>Dashboard</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+            <p><b>Overzicht polls</b></p>
+            <ul>
+                    <li *ngFor="let p of polls">
+                        {{p.vraag}}  
+                        <button mat-button color="primary" (click)="stemmen(p.pollID)">Stemmen</button>
+                        <button mat-button color="primary" (click)="resultaatTonen(p.pollID)">Resultaat</button>
+                        <button mat-button class="weiger" (click)="weigerPoll(p.pollID)">Verwijderen</button>
+                    </li>
+            </ul>
+            <p>{{messagePoll}}</p>
+            <p><b>Poll Uitnodigingen</b></p>
+            <ul>
+                    <li *ngFor="let v of verzoeken">
+                        {{v.vraag}}  
+                        <button mat-button class="accept" (click)="accepteerPoll(v.pollID)">Accepteren</button>
+                        <button mat-button class="weiger" (click)="weigerPoll(v.pollID)">Weigeren</button>
+                    </li>
+            </ul>
+            <p>{{messageUitnodiging}}</p>
+            <p><b>Vriendschapsverzoeken</b></p>
+            <ul>
+                    <li *ngFor="let vv of vriendverzoeken">
+                        {{vv.gebruikersnaam}}  
+                        <button mat-button class="accept" (click)="accepteerVriend(vv.gebruikerID)">Accepteren</button>
+                        <button mat-button class="weiger" (click)="weigerVriend(vv.gebruikerID)">Weigeren</button>
+                    </li>
+            </ul>
+            <p>{{messageVriend}}</p>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,10 @@
+<mat-card class="card">
+        <mat-card-header>
+            <mat-card-title><b>{{poll.vraag}}</b></mat-card-title>
+        </mat-card-header>
+        <mat-card-content> 
+            <li *ngFor="let a of antwoorden">
+                {{a.respons}}: {{a.stemmen.length}} stem(men)
+            </li>
+        </mat-card-content>
+    </mat-card>
